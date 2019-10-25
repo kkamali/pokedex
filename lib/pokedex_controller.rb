@@ -10,7 +10,7 @@ class PokedexController
       if mon != "error"
         puts "#{mon.flavor_text} It's height is usually #{mon.height} meters while its weight is usually #{mon.weight} kilos."
       else
-        puts "Sorry I don't understand."
+        puts "Sorry there is no information about that Pokémon, there are still many yet to be discovered!."
       end
       puts "Wanna learn about another Pokémon? You can also type 'exit' to leave!"
       user_input = gets.chomp
