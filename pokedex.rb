@@ -21,7 +21,7 @@ class Pokedex
       pokemon_attributes[:flavor_text] = get_flavor_text(pokemon)
       Pokemon.new(pokemon_attributes)
     else
-      "I don't know that Pokémon!"
+      "error"
     end
   end
 

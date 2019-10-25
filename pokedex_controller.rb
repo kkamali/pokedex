@@ -7,7 +7,11 @@ class PokedexController
     user_input = gets.chomp
     until user_input == "exit"
       mon = dex.make_pokemon(user_input)
-      puts "#{mon.flavor_text} It's height is usually #{mon.height} meters while it's weight is usually #{mon.weight} kilos."
+      if mon != "error"
+        puts "#{mon.flavor_text} It's height is usually #{mon.height} meters while it's weight is usually #{mon.weight} kilos."
+      else
+        puts "Sorry I don't understand."
+      end
       puts "Wanna learn about another Pokémon? You can also type 'exit' to leave!"
       user_input = gets.chomp
     end
