@@ -8,7 +8,7 @@ class PokedexController
     until user_input == "exit"
       mon = dex.make_pokemon(user_input.downcase)
       if mon != "error"
-        puts "#{mon.flavor_text} It's height is usually #{mon.height} meters while its weight is usually #{mon.weight} kilos."
+        mon.info
       else
         puts "There is no data. There are still Pokémon yet to be identified."
       end

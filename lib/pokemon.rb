@@ -5,4 +5,7 @@ class Pokemon
     attributes.each {|key, value| self.send(("#{key}="), value)}
   end
 
+  def info
+    puts "#{@flavor_text} It's height is usually #{@height} meters while its weight is usually #{@weight} kilos."
+  end
 end
