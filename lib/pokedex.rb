@@ -16,6 +16,7 @@ class Pokedex
     dex_info = find_pokemon(pokemon)
     if dex_info != "error"
       pokemon_attributes = {}
+      pokemon_attributes[:name] = dex_info.name
       pokemon_attributes[:height] = dex_info.height.to_f / 10
       pokemon_attributes[:weight] = dex_info.weight.to_f / 10
       pokemon_attributes[:flavor_text] = get_flavor_text(pokemon)
