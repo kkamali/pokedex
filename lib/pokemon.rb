@@ -6,6 +6,6 @@ class Pokemon
   end
 
   def info
-    puts "#{@flavor_text} It's height is usually #{@height} meters while its weight is usually #{@weight} kilos."
+    puts "#{@flavor_text} It's height is usually #{@height} meters while its weight is usually #{@weight} kilos. It's type(s) are: #{@types.join(", ")}"
   end
 end

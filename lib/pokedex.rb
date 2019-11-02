@@ -19,6 +19,8 @@ class Pokedex
       pokemon_attributes[:name] = dex_info.name
       pokemon_attributes[:height] = dex_info.height.to_f / 10
       pokemon_attributes[:weight] = dex_info.weight.to_f / 10
+      types =  dex_info.types.map{|type| type.type.name}
+      pokemon_attributes[:types] = types
       pokemon_attributes[:flavor_text] = get_flavor_text(pokemon)
       Pokemon.new(pokemon_attributes)
     else
@@ -27,6 +29,12 @@ class Pokedex
   end
 
   def get_flavor_text(pokemon)
-    PokeApi.get(pokemon_species: pokemon).flavor_text_entries[1].flavor_text
+    entries = PokeApi.get(pokemon_species: pokemon).flavor_text_entries
+    entries.each do |entry|
+      language = entry.language.name
+      if language == "en"
+        return entry.flavor_text
+      end
+    end
   end
 end
